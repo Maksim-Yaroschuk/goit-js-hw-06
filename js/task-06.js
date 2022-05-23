@@ -1,19 +1,15 @@
 const validForm = document.querySelector("#validation-input")
 
-// console.log(validForm)
-// const value = "Max"
-// const sybolsLength = value.length
+validForm.addEventListener("blur", onValidForm)
 
-// console.log(sybolsLength)
-
-// validForm.addEventListener("blur", () => {
-//     if (validForm.value.length !== validForm.data-length) {
-//         validForm.id = "validation-input.invalid"
-//     }
-// })
-
-validForm.addEventListener("focus", () => {
-    validForm.id = "#validation-input.invalid"
-})
+function onValidForm() {    
+    if (validForm.value.length === Number(validForm.dataset.length)) {
+        validForm.classList.remove("invalid")
+        validForm.classList.add("valid")
+    } else {
+        validForm.classList.remove("valid")
+        validForm.classList.add("invalid")
+    }
+}
 
 
