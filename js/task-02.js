@@ -16,10 +16,11 @@ const ingredients = [
 ];
 
 const ingredientsEl = document.querySelector('#ingredients')
-
+const ingredientsElArr = []
 ingredients.forEach(ingredient => {
   const ingredientEl = document.createElement('li')
         ingredientEl.classList.add('item')
         ingredientEl.textContent = ingredient
-        ingredientsEl.append(ingredientEl)
+        ingredientsElArr.push(ingredientEl)
 })
+ingredientsEl.append(...ingredientsElArr)
