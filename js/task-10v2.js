@@ -2,6 +2,8 @@ function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 }
 
+// Версія 2 задачі №10 вирішена трішки іншим способом, не зовсім так як в завданні
+
 const controls = document.querySelector("#controls")
 const amount = controls.firstElementChild
 const createBtn = controls.querySelector("button")
