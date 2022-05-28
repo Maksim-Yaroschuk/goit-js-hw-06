@@ -8,10 +8,6 @@ const createBtn = controls.querySelector("button")
 const resetBtn = controls.lastElementChild
 const boxes = document.querySelector("#boxes")
 
-console.log(amount)
-console.log(createBtn)
-console.log(resetBtn)
-console.log(boxes)
 
 createBtn.addEventListener("click", onCreateElements)
 resetBtn.addEventListener("click", onDestroyElements)
