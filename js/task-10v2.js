@@ -3,33 +3,34 @@ function getRandomHexColor() {
 }
 
 const controls = document.querySelector("#controls")
-const amountForm = controls.firstElementChild
+const amount = controls.firstElementChild
 const createBtn = controls.querySelector("button")
 const resetBtn = controls.lastElementChild
 const boxes = document.querySelector("#boxes")
 
-createBtn.addEventListener("click", onGetAmount)
-resetBtn.addEventListener("click", destroyBoxes)
+console.log(amount)
+console.log(createBtn)
+console.log(resetBtn)
+console.log(boxes)
 
-function onGetAmount() {
-  return createBoxes(amountForm.value)
-}
+createBtn.addEventListener("click", onCreateElements)
+resetBtn.addEventListener("click", onDestroyElements)
 
-function createBoxes(amount) {
+function onCreateElements() {
   let w = 20
   let h = 20
   const elementsArr = []
-    for (let i = 1; i <= amount; i++) {
+  for (let i = 1; i <= amount.value; i++) {
     const elements = document.createElement("div")
     elements.style.width = `${w += 10}px`
     elements.style.height = `${h += 10}px`
     elements.style.backgroundColor = getRandomHexColor()
     elementsArr.push(elements)
-    }
-    boxes.append(...elementsArr)
   }
+  boxes.append(...elementsArr)
+}
 
-function destroyBoxes() {
+function onDestroyElements() {
 boxes.innerHTML = ""
 }
 
